@@ -26,7 +26,7 @@ RUN docker-php-source extract \
     && pecl install xdebug redis opcache\
     && docker-php-ext-enable xdebug redis opcache\
     && docker-php-source delete \
-    && docker-php-ext-install mcrypt pdo_mysql soap
+    && docker-php-ext-install mcrypt pdo_mysql soap \
     && echo "xdebug.remote_enable=on\n" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
     && echo "xdebug.remote_autostart=on\n" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
     && echo "xdebug.remote_port=9000\n" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
